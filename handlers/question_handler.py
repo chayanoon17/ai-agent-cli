@@ -20,7 +20,7 @@ def handle_gold_tool(question: str) -> str:
 def handle_wiki_tool(question: str) -> str:
     logging.info("Using Wikipedia Tool")
     question = re.sub(r"(wiki(pedia)?[:：]?\s*)", "", question, flags=re.IGNORECASE)
-    question = re.sub(r"(คืออะไร|คือใคร|อยู่ที่ประเทศอะไร|ข้อมูลเกี่ยวกับ|ประวัติของ|ข้อมูลของ)", "", question, flags=re.IGNORECASE)
+    question = re.sub(r"(|คือใคร|อยู่ที่ประเทศอะไร|ข้อมูลเกี่ยวกับ|ประวัติของ|ข้อมูลของ)", "", question, flags=re.IGNORECASE)
     cleaned_query = question.strip()
 
     summary = get_wiki_summary(cleaned_query)
